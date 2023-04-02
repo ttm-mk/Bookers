@@ -1,0 +1,32 @@
+<h1>Books</h1>
+<p></p>
+<table>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th></th>
+    </tr>
+    
+    <tr>
+      <!--% @book.each do |book| %>-->
+       <td>%= @book.title %></td>
+       <td>%= @book.body %></td>
+      <!--% end %>-->
+      <td>
+       <%= link_to "Show", '/books/:id' %>
+       <%= link_to "Edit", 'books/:id/edit' %>
+       <%= link_to "Destroy", url: '/books', method: :delete, "data-confirm" => "Are you sure?" %>
+      </td>
+    </tr>
+    
+</table>
+<p></p>
+<div>
+  <h2>New book</h2>
+  <%= form_with model: @book, url: '/books', method: :post do |f| %>
+    <p>Title</p>
+    <%= f.text_field :title %>
+    <p>Body</p>
+    <%= f.text_area :body %>
+    <p><%= f.submit "Create Book" %></p>
+  <% end %>
