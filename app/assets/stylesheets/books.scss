@@ -8,3 +8,33 @@
   box-sizing: border-box;
 }
 
+h1 {
+  font-size: 25px;
+}
+
+table {
+  font-size: 13px;
+  border-collapse: separate;
+  border-spacing: 10px;
+  margin: 5px;
+}
+
+.th_title {
+  table-layout: fixed;
+  width: 180px;
+  word-wrap: break-word;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+.new-form {
+  // line-height: px;
+  margin: 5px;
+}
+
+.new-form p {
+  padding-top: 15px;
+  font-size: 13px;
+}

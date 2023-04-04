@@ -14,3 +14,14 @@
  *= require_self
  */
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: verdana, arial, helvetica, sans-serif;
+  padding-top: 30px;
+  padding-left: 30px;
+}
