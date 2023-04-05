@@ -30,11 +30,31 @@ h2 {
 }
 
 .new-form {
-  // line-height: px;
   margin: 5px;
 }
 
 .new-form p {
   padding-top: 15px;
   font-size: 13px;
+}
+
+.show p {
+  font-size: 12px;
+  margin-left: 40px;
+  line-height: 50px;
+}
+
+.edit-form p{
+  padding-top: 12px;
+  font-size: 13px;
+}
+
+.edit-back {
+  font-size: 13px;
+  line-height: 45px;
+}
+
+.show-back {
+  font-size: 13px;
+  line-height: 35px;
 }
