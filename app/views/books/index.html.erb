@@ -30,9 +30,9 @@
 
 <div class="error-text">
   <% if @book.errors.any? %>
-    <%= @book.error.count %>個のエラーだよ
+    <%= @book.errors.count %>個のエラーだよ
     <ul>
-      <%= @book.errors.full_messages.each do |message| %>
+      <% @book.errors.full_messages.each do |message| %>
       <li><%= message %></li>
       <% end %>
     </ul>
