@@ -25,6 +25,10 @@ table {
   word-wrap: break-word;
 }
 
+.link {
+  white-space: nowrap;
+}
+
 h2 {
   font-size: 20px;
 }
@@ -63,4 +67,33 @@ h2 {
   color: yellowgreen;
   font-size: 13px;
   margin: 15px 40px;
+}
+
+.error {
+  width: 450px;
+  height: 150px;
+  text-aline: center;
+  font-size: 13px;
+  margin: 10px 0;
+  border: red 2px solid;
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.error-title {
+  width: 447px;
+  height: 30px;
+  color: #fff;
+  border-bottom: red 2px solid;
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error ul {
+  margin: auto 0;
 }

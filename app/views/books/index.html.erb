@@ -17,7 +17,7 @@
      <tr>
        <td class="tr_title"><%= book.title %></td>
        <td class="tr_body"><%= book.body %></td>
-       <td>
+       <td class= "link">
         <%= link_to "Show", book_path(book.id) %>&nbsp;
         <%= link_to "Edit", edit_book_path(book.id) %>&nbsp;
         <%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %>
@@ -28,17 +28,38 @@
 
 </table>
 
-<div class="error-text">
-  <% if @book.errors.any? %>
-    <%= @book.errors.count %>個のエラーだよ
-    <ul>
-      <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-      <% end %>
-    </ul>
-  <% end %>
-</div>
+<!--error-message-->
+<% if @errors.any? %>
 
+  <div class="error">
+    
+    <% if @errors.count >= 2 %>
+       <div class="error-title">
+         <%= @errors.count %>errors have occurred. 
+       </div>
+       <ul>
+         <% @errors.full_messages.each do |message| %>
+         <li><%= message %></li>
+         <% end %>
+       </ul>
+    
+    <% else @errors.count == 1 %>
+       <div class="error-title">
+         <%= @errors.count %>error has occurred. 
+       </div>
+       <ul>
+         <% @errors.full_messages.each do |message| %>
+         <li><%= message %></li>
+         <% end %>
+       </ul>
+       
+    <% end %>
+    
+  </div>
+<% end %>
+
+
+<!--new-form-->
 <div class="new-form">
   <h2>New book</h2>
   <%= form_with model: @book, url: '/books', method: :post do |f| %>

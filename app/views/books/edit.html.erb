@@ -1,15 +1,33 @@
 <h1>Editing Book</h1>
 
-<div class="error-text">
-  <% if @book.errors.any? %>
-    <%= @book.errors.count %>このエラーだよ
-    <ul>
-      <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-      <% end %>
-    </ul>
-  <% end %>
-</div>
+<% if @errors.any? %>
+
+  <div class="error">
+    
+    <% if @errors.count >= 2 %>
+       <div class="error-title">
+         <%= @errors.count %>errors have occurred. 
+       </div>
+       <ul>
+         <% @errors.full_messages.each do |message| %>
+         <li><%= message %></li>
+         <% end %>
+       </ul>
+    
+    <% else @errors.count == 1 %>
+       <div class="error-title">
+         <%= @errors.count %>error has occurred. 
+       </div>
+       <ul>
+         <% @errors.full_messages.each do |message| %>
+         <li><%= message %></li>
+         <% end %>
+       </ul>
+       
+    <% end %>
+    
+  </div>
+<% end %>
   
 
 <div class="edit-form">
