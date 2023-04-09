@@ -1,5 +1,6 @@
 <h1>Editing Book</h1>
 
+<!--error-massage-->
 <% if @errors.any? %>
 
   <div class="error">
@@ -29,7 +30,7 @@
   </div>
 <% end %>
   
-
+<!--edit-form-->
 <div class="edit-form">
   <%= form_with model: @book, url:book_path(@book.id), method: :patch do |f| %>
     <p>Title</p>
@@ -40,6 +41,7 @@
   <% end %>
 </div>
 
+<!--show|-->
 <div class="show-back">
   <p>
     <%= link_to "Show", book_path(@book.id) %>

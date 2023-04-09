@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  
+# create
   def create
     @books = Book.all
     @book = Book.new(book_params)
@@ -12,21 +12,25 @@ class BooksController < ApplicationController
     end
   end
   
+# index
   def index
     @book = Book.new
     @books = Book.all
     @errors = @book.errors
   end
   
+# show
   def show
     @book = Book.find(params[:id])
   end
   
+# edit
   def edit
     @book = Book.find(params[:id])
     @errors = @book.errors
   end
   
+# update
   def update
     @book = Book.find(params[:id])
     if @book.update(book_params)
@@ -38,11 +42,13 @@ class BooksController < ApplicationController
     end
   end
   
+# destroy
   def destroy
     book = Book.find(params[:id])
     book.destroy
     redirect_to '/books'
   end
+  
   
 # ストロングパラメータ
  private
